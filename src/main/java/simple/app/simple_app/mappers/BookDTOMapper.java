@@ -6,11 +6,11 @@ import simple.app.simple_app.models.Book;
 import simple.app.simple_app.models.dto.BookDTO;
 
 @Component
-public class BookMapper implements Mapper<BookDTO, Book> {
+public class BookDTOMapper implements Mapper<Book, BookDTO> {
 
     @Override
-    public Book map(BookDTO from) {
-        return Book.builder()
+    public BookDTO map(Book from) {
+        return BookDTO.builder()
                 .name(from.getName())
                 .kind(from.getKind())
                 .yearOfPublication(from.getYearOfPublication())

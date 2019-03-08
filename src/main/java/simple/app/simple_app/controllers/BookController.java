@@ -1,5 +1,7 @@
 package simple.app.simple_app.controllers;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import simple.app.simple_app.models.dto.BookDTO;
 import simple.app.simple_app.service.BookService;
@@ -16,14 +18,16 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @GetMapping("/allbooks")
-    public List<BookDTO> getBooks(){
-        return bookService.getAllBooks();
-    }
 
     @PostMapping("/addbook")
-    public void addBook(@RequestBody BookDTO bookDTO){
+    public void addBook(@RequestBody BookDTO bookDTO) {
         bookService.addBook(bookDTO);
+    }
+
+
+    @DeleteMapping("/delete/{name}")
+    public void deleteBook(@PathVariable String name) {
+        bookService.searchBookByNameAndDelete(name);
     }
 
 
