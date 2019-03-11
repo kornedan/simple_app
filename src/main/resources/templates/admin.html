@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/library :: init">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ADD
+</BR>
+<form th:object="${book}" method="post" action="/book/addbook" enctype="multipart/form-data">
+    <input type="text" name="name"/>
+    <input type="text" name="kind"/>
+    <input type="number" name="yearOfPublication"/>
+    <input type="file" name="picture"/>
+
+    <button type="submit" class="btn btn-sm btn-ok">creat</button>
+</form>
+</BR>
+</BR>
+</BR>
+</BR>
+</BR>
+Delete
+</BR>
+<form method="post" action="/book/delete">
+    <input type="text" name="name"/>
+    <button type="submit" class="btn btn-sm btn-warning">delete</button>
+</form>
+</body>
+</html>

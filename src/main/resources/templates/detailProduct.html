@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>DetailProduct</title>
+</head>
+<body>
+<tr th:each="product: ${product}">
+    <td th:text="${product.getName()}"></td>
+    <td th:text="${product.getKind()}"></td>
+    <td th:text="${product.getYearOfPublication()}"></td>
+    <td> <img th:src="${product.getHrefNameFile()}"></td>
+</body>
+</html>
