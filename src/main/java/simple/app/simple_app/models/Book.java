@@ -22,5 +22,7 @@ public class Book {
     private String name;
     private String kind;
     private int yearOfPublication;
+    private String nameFile;
+    private double price;
 
 }

@@ -14,6 +14,7 @@ public class BookDTOMapper implements Mapper<Book, BookDTO> {
                 .name(from.getName())
                 .kind(from.getKind())
                 .yearOfPublication(from.getYearOfPublication())
+                .hrefNameFile("http://localhost:8080/api/files/download/" + from.getNameFile())
                 .build();
     }
 }

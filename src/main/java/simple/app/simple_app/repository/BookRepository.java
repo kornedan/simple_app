@@ -11,5 +11,5 @@ import java.util.Optional;
 public interface BookRepository extends JpaRepository<Book, Long> {
 
     @Query(value = "select c from Book c where c.name = ?1")
-    Optional<Book> findBoolByName(String name);
+    Optional<Book> findBookByName(String name);
 }

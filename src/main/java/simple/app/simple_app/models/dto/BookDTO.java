@@ -13,4 +13,6 @@ public class BookDTO {
     private String name;
     private String kind;
     private int yearOfPublication;
+    private String hrefNameFile;
+    private double price;
 }

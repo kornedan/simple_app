@@ -24,4 +24,4 @@ HELP.md
 /nbdist/
 /.nb-gradle/
 /build/
-resources\config.properties
+/src/main/resources/config.properties
