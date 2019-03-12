@@ -5,15 +5,18 @@
     <title>DetailProduct</title>
 </head>
 <body>
+<div id="containerDetailProduct">
 <tr th:each="product: ${product}">
     <td th:text="${product.getName()}"></td>
     <td th:text="${product.getKind()}"></td>
     <td th:text="${product.getYearOfPublication()}"></td>
-    <td> <img th:src="${product.getHrefNameFile()}"></td>
+    <td><img th:src="${product.getHrefNameFile()}"></td>
 </tr>
 <form action="/buyProduct">
     <button type="submit" class="btn btn-sm btn-primary">KUP!!!</button>
 </form>
 
+<div class="backToIndex" th:replace="fragments/backToIndex :: hrefWIthIndex"></div>
+</div>
 </body>
 </html>

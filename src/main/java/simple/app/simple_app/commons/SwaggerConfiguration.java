@@ -17,8 +17,8 @@ public class SwaggerConfiguration {
     public Docket docs() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("simple.app.simple_app"))
-                .paths(regex("/.*"))
+                .apis(RequestHandlerSelectors.basePackage("simple.app.simple_app.controllers"))
+                .paths(regex("/product/.*"))
                 .build();
     }
 

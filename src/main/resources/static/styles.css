@@ -1,0 +1,12 @@
+#element {
+    height: 50px;
+    width: auto;
+    background-color: red;
+}
+#adminContainer{
+    height: 60%;
+    width: 60%;
+
+    background: black;
+
+}
