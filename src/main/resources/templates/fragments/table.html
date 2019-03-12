@@ -8,7 +8,7 @@
             <td th:text="${product.getName()}"></td>
             <td th:text="${product.getKind()}"></td>
             <td th:number="${product.getYearOfPublication()}"></td>
-            <td><img th:src="${product.getHrefNameFile()}" width="20px" height="20px"></td>
+            <td><img th:src="${product.getHrefNameFile()}" width="600px" height="60px"></td>
             <td>
                 <form method="post" th:object="${product}" action="/detailProduct">
                     <input type="hidden" name="name" th:value="${product.getName()}"/>
