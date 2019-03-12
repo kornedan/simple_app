@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="fragments/library :: init">
     <meta charset="UTF-8">
     <title>DetailProduct</title>
 </head>
@@ -10,5 +10,10 @@
     <td th:text="${product.getKind()}"></td>
     <td th:text="${product.getYearOfPublication()}"></td>
     <td> <img th:src="${product.getHrefNameFile()}"></td>
+</tr>
+<form action="/buyProduct">
+    <button type="submit" class="btn btn-sm btn-primary">KUP!!!</button>
+</form>
+
 </body>
 </html>

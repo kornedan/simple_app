@@ -1,39 +1,37 @@
 package simple.app.simple_app.controllers;
 
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import simple.app.simple_app.models.dto.BookDTO;
-import simple.app.simple_app.service.BookService;
+import simple.app.simple_app.models.dto.ProductDTO;
+import simple.app.simple_app.service.ProductService;
 
 @Controller
 public class IndexController {
 
-    private BookService bookService;
+    private ProductService productService;
 
-    public IndexController(BookService bookService) {
-        this.bookService = bookService;
+    public IndexController(ProductService productService) {
+        this.productService = productService;
     }
 
     @RequestMapping("/")
     public String indexController(Model model) {
-        model.addAttribute("book", bookService.getAllBooks());
+        model.addAttribute("product", productService.getAllProducts());
         return "index";
     }
 
-
-    @RequestMapping("/admin")
-    public String adminController(){
-        return "admin";
-    }
-
-
-    @PostMapping("/detailBook")
-    public String deatailBook (@ModelAttribute BookDTO bookDTO, Model model){
-        model.addAttribute("product", bookDTO);
+    @PostMapping("/detailProduct")
+    public String deatailBookController (@ModelAttribute ProductDTO productDTO, Model model){
+        model.addAttribute("product", productDTO);
         return "detailProduct";
     }
+
+    @RequestMapping("/buyProduct")
+    public String buyProductController(){
+        return "buyProduct";
+    }
+
 }

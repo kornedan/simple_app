@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class BookWithPicture {
+public class ProductWithPicture {
     private String name;
     private String kind;
     private int yearOfPublication;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head th:replace="fragments/library :: init">
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,13 +7,13 @@
 <body>
 ADD
 </BR>
-<form th:object="${book}" method="post" action="/book/addbook" enctype="multipart/form-data">
+<form th:object="${product}" method="post" action="/admin/add" enctype="multipart/form-data">
     <input type="text" name="name"/>
     <input type="text" name="kind"/>
     <input type="number" name="yearOfPublication"/>
     <input type="file" name="picture"/>
 
-    <button type="submit" class="btn btn-sm btn-ok">creat</button>
+    <button type="submit" class="btn btn-sm btn-success">creat</button>
 </form>
 </BR>
 </BR>
@@ -22,9 +22,9 @@ ADD
 </BR>
 Delete
 </BR>
-<form method="post" action="/book/delete">
+<form method="post" action="/admin/delete">
     <input type="text" name="name"/>
-    <button type="submit" class="btn btn-sm btn-warning">delete</button>
+    <button type="submit" class="btn btn-sm btn-danger">delete</button>
 </form>
 </body>
 </html>

@@ -1,20 +1,21 @@
-<head th:replace="fragments/library :: init" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/library :: init" xmlns:th="https://www.thymeleaf.org">
+    <link rel="Stylesheet" type="text/css" href="styleForindex.css">
 </head>
 <div id="element" class="col-sm-12" xmlns:th="http://www.w3.org/1999/xhtml">
-    <table class="table table-dark" th:fragment="table">
+    <table th:fragment="table">
 
-        <tr th:each="book: ${book}">
-            <td th:text="${book.getName()}"></td>
-            <td th:text="${book.getKind()}"></td>
-            <td th:number="${book.getYearOfPublication()}"></td>
-            <td><img th:src="${book.getHrefNameFile()}"></td>
+        <tr th:each="product: ${product}">
+            <td th:text="${product.getName()}"></td>
+            <td th:text="${product.getKind()}"></td>
+            <td th:number="${product.getYearOfPublication()}"></td>
+            <td><img th:src="${product.getHrefNameFile()}" width="20px" height="20px"></td>
             <td>
-                <form method="post" th:object="${book}" action="/detailBook">
-                    <input type="hidden" name="name" th:value="${book.getName()}"/>
-                    <input type="hidden" name="kind" th:value="${book.getKind()}"/>
-                    <input type="hidden" name="yearOfPublication" th:value="${book.getYearOfPublication()}"/>
-                    <input type="hidden" name="hrefNameFile" th:value="${book.getHrefNameFile()}"/>
-                    <button type="submit" class="btn btn-sm btn-warning">Kup</button>
+                <form method="post" th:object="${product}" action="/detailProduct">
+                    <input type="hidden" name="name" th:value="${product.getName()}"/>
+                    <input type="hidden" name="kind" th:value="${product.getKind()}"/>
+                    <input type="hidden" name="yearOfPublication" th:value="${product.getYearOfPublication()}"/>
+                    <input type="hidden" name="hrefNameFile" th:value="${product.getHrefNameFile()}"/>
+                    <button type="submit" class="btn btn-sm btn-primary">Kup</button>
                 </form>
             </td>
         </tr>
