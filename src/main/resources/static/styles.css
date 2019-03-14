@@ -1,12 +1,96 @@
-#element {
-    height: 50px;
-    width: auto;
-    background-color: red;
-}
-#adminContainer{
+/*page admin */
+.adminContainer{
     height: 60%;
     width: 60%;
-
-    background: black;
-
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+    background-color: dodgerblue;
+}
+.header{
+    text-align: center;
+}
+.add{
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.delete{
+    text-align: center;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+/*Index Page */
+.indexContainer{
+    width: 100%;
+}
+.indexHeader{
+    width: 90%;
+    text-align: center;
+    float: left;
+}
+.indexAdminPanel{
+    float: right;
+}
+.elementProduct{
+    clear: both;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 100%;
+}
+.elementProduct table{
+    width: 60%;
+}
+.elementProduct td{
+    width: 15%;
+    align-items: center;
+}
+.elementProduct button{
+    float: right;
+}
+.elementProduct  #price{
+    font-size: x-large;
+}
+.elementProduct #name{
+    font-size: x-large;
+}
+.elementProduct #zl{
+    font-size: x-large;
+}
+/*detailProduct Page */
+.detailProductContainer{
+    width: auto;
+    margin-top: 10%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+.detailProductName{
+    width: 25%;
+    float: left;
+    font-size: xx-large;
+    align-items: center;
+}
+.detailProductPrice{
+    width: 25%;
+    float: left;
+    font-size: xx-large;
+    align-items: center;
+}
+.detailProductBuyProduct{
+    float: right;
+    align-items: center;
+}
+.detailProductPicture{
+    clear: both;
+    float: left;
+    align-items: center;
+}
+.detailProductDescription{
+    float: right;
+    width: auto;
+    font-size: x-large;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    align-items: center;
 }

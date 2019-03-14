@@ -12,8 +12,8 @@ public class ProductMapper implements Mapper<ProductWithPicture, Product> {
     public Product map(ProductWithPicture from) {
         return Product.builder()
                 .name(from.getName())
-                .kind(from.getKind())
-                .yearOfPublication(from.getYearOfPublication())
+                .price(from.getPrice())
+                .description(from.getDescription())
                 .nameFile(from.getPicture().getOriginalFilename())
                 .price(from.getPrice())
                 .build();

@@ -11,8 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class ProductDTO {
     private String name;
-    private String kind;
-    private int yearOfPublication;
     private String hrefNameFile;
     private double price;
+    private String description;
 }

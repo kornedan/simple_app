@@ -14,8 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Builder
 public class ProductWithPicture {
     private String name;
-    private String kind;
-    private int yearOfPublication;
     private MultipartFile picture;
     private double price;
+    private String description;
 }

@@ -1,41 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
 <head th:replace="fragments/library :: init">
     <meta charset="UTF-8">
     <title>AdminConsole</title>
-    <link th:href="@{/styles.css}" rel="stylesheet" type="text/css" media="all"/>
 </head>
 <body>
-<div id="adminContainer">
-    <div id="header">
-        Witaj w panelu Admina
+<div class="adminContainer">
+    <div class="border border-dark">
+        <div class="header">
+            Witaj w panelu Admina
+        </div>
+        <div class="add">
+            </BR>
+            ADD
+            </BR>
+            </BR>
+            <form th:object="${product}" method="post" action="/admin/add" enctype="multipart/form-data">
+                <input type="text" name="name" placeholder="Wpisz nazwe przedmiotu"/>
+                <input type="number" name="price" step="0.01" placeholder="Wpisz cene"/>
+                <input type="file" name="picture"/>
+                <textarea name="description" cols="60" rows="6" placeholder="Wpisz opis produktu"></textarea>
+                </BR>
+                <button type="submit" class="btn btn-success">create</button>
+            </form>
+        </div>
+        <div class="delete">
+            </BR>
+            DELETE
+            </BR>
+            </BR>
+            <form method="post" action="/admin/delete">
+                <input type="text" name="name" placeholder="Wpisz nazwe przedmiotu"/>
+                <button type="submit" class="btn btn-sm btn-danger">delete</button>
+            </form>
+        </div>
+        <div class="backToIndex" th:replace="fragments/backToIndex :: hrefWIthIndex"></div>
     </div>
-    <div id="add">
-        ADD
-        </BR>
-        <form th:object="${product}" method="post" action="/admin/add" enctype="multipart/form-data">
-            <input type="text" name="name"/>
-            <input type="text" name="kind"/>
-            <input type="number" name="yearOfPublication"/>
-            <input type="file" name="picture"/>
-
-            <button type="submit" class="btn btn-sm btn-success">creat</button>
-        </form>
-    </div>
-    </BR>
-    </BR>
-    </BR>
-    </BR>
-    </BR>
-    <div id="delete">
-        Delete
-        </BR>
-        <form method="post" action="/admin/delete">
-            <input type="text" name="name"/>
-            <button type="submit" class="btn btn-sm btn-danger">delete</button>
-        </form>
-    </div>
-    <div class="backToIndex" th:replace="fragments/backToIndex :: hrefWIthIndex"></div>
 </div>
 </body>
 </html>

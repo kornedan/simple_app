@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
 <head th:replace="fragments/library :: init">
     <meta charset="UTF-8">
     <title>simple app</title>
 </head>
 <body>
-<div id="container">
-    <div class="Product" th:replace="fragments/table :: table"></div>
-
-
-
+<div class="indexContainer">
+    <div class="indexHeader">
+        <h1> Sklep Internetowy</h1>
+    </div>
+    <div class="indexAdminPanel">
+        <form action="/admin">
+            <button type="submit" class="btn btn-dark">Admin</button>
+        </form>
+    </div>
+    <div th:replace="fragments/table :: table"></div>
 </div>
-
 <!-- wylogowanie <a th:href="@{/logout}"></a> -->
 </body>
 </html>

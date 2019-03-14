@@ -12,8 +12,8 @@ public class ProductDTOMapper implements Mapper<Product, ProductDTO> {
     public ProductDTO map(Product from) {
         return ProductDTO.builder()
                 .name(from.getName())
-                .kind(from.getKind())
-                .yearOfPublication(from.getYearOfPublication())
+                .price(from.getPrice())
+                .description(from.getDescription())
                 .hrefNameFile("http://localhost:8080/api/files/download/" + from.getNameFile())
                 .build();
     }

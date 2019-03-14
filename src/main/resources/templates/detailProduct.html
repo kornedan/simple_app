@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
 <head th:replace="fragments/library :: init">
     <meta charset="UTF-8">
     <title>DetailProduct</title>
 </head>
 <body>
-<div id="containerDetailProduct">
-<tr th:each="product: ${product}">
-    <td th:text="${product.getName()}"></td>
-    <td th:text="${product.getKind()}"></td>
-    <td th:text="${product.getYearOfPublication()}"></td>
-    <td><img th:src="${product.getHrefNameFile()}"></td>
-</tr>
-<form action="/buyProduct">
-    <button type="submit" class="btn btn-sm btn-primary">KUP!!!</button>
-</form>
+<div class="detailProductContainer">
 
-<div class="backToIndex" th:replace="fragments/backToIndex :: hrefWIthIndex"></div>
+    <div class="detailProductName" th:text="${product.getName()}"></div>
+    <div class="detailProductPrice" th:text="${product.getPrice()}"></div>
+    <div class="detailProductBuyProduct">
+        <form action="/buyProduct">
+            <button type="submit" class="btn btn-lg btn-success">KUP!!!</button>
+        </form>
+    </div>
+    <div class="detailProductPicture"><img th:src="${product.getHrefNameFile()}" width="400" height="400"></div>
+    <div class="detailProductDescription" th:text="${product.getDescription()}"></div>
+    <div class="backToIndex" th:replace="fragments/backToIndex :: hrefWIthIndex"></div>
 </div>
 </body>
 </html>
