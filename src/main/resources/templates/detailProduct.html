@@ -6,17 +6,18 @@
 </head>
 <body>
 <div class="detailProductContainer">
-
-    <div class="detailProductName" th:text="${product.getName()}"></div>
-    <div class="detailProductPrice" th:text="${product.getPrice()}"></div>
-    <div class="detailProductBuyProduct">
-        <form action="/buyProduct">
-            <button type="submit" class="btn btn-lg btn-success">KUP!!!</button>
-        </form>
+    <div class="border border-dark">
+        <div class="detailProductName" th:text="${product.getName()}"></div>
+        <div class="detailProductPrice" th:text="${product.getPrice()}"></div>
+        <div class="detailProductBuyProduct">
+            <form action="/buyProduct">
+                <button type="submit" class="btn btn-lg btn-success">KUP!!!</button>
+            </form>
+        </div>
+        <div class="detailProductPicture"><img th:src="${product.getHrefNameFile()}" width="400" height="400"></div>
+        <div class="detailProductDescription" th:text="${product.getDescription()}"></div>
+        <div class="backToIndex" th:replace="fragments/backToIndex :: hrefWIthIndex"></div>
     </div>
-    <div class="detailProductPicture"><img th:src="${product.getHrefNameFile()}" width="400" height="400"></div>
-    <div class="detailProductDescription" th:text="${product.getDescription()}"></div>
-    <div class="backToIndex" th:replace="fragments/backToIndex :: hrefWIthIndex"></div>
 </div>
 </body>
 </html>

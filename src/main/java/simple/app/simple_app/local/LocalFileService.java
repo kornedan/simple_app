@@ -16,9 +16,7 @@ import java.util.logging.Logger;
 public class LocalFileService {
 
 
-
-
-    public static  final Logger LOGGER = Logger.getLogger(LocalFile.class.getName());
+    public static final Logger LOGGER = Logger.getLogger(LocalFile.class.getName());
 
     private LocalFileController localFileController;
 
@@ -30,9 +28,10 @@ public class LocalFileService {
         Path path = Paths.get(localFileController.uploads + file.getOriginalFilename());
         Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
     }
-    public void deleteFile(String file){
-        File file1ToDelete = new File(localFileController.uploads+file);
-        if(file1ToDelete.exists())
+
+    public void deleteFile(String file) {
+        File file1ToDelete = new File(localFileController.uploads + file);
+        if (file1ToDelete.exists())
             file1ToDelete.delete();
     }
 }

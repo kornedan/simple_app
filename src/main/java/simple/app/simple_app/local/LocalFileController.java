@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 
-
 import javax.servlet.ServletContext;
 
 import java.io.File;
@@ -44,7 +43,7 @@ import java.util.stream.Collectors;
 @RequestMapping("/api")
 public class LocalFileController {
 
-    public static  final Logger LOGGER = Logger.getLogger(LocalFile.class.getName());
+    public static final Logger LOGGER = Logger.getLogger(LocalFile.class.getName());
 
     ServletContext servletContext;
     String uploads;
@@ -54,10 +53,10 @@ public class LocalFileController {
         createDirectory();
     }
 
-    private void createDirectory(){
+    private void createDirectory() {
         uploads = servletContext.getRealPath("/uploads/");
-        Path path= Paths.get(uploads);
-        if(!Files.exists(path)) {
+        Path path = Paths.get(uploads);
+        if (!Files.exists(path)) {
             try {
                 Files.createDirectory(path);
             } catch (IOException e) {
@@ -90,16 +89,16 @@ public class LocalFileController {
 
     @GetMapping("/files/download/{file}")
     public ResponseEntity<?> getFile(@PathVariable String file) throws IOException {
-        Path path=Paths.get(uploads+file);
+        Path path = Paths.get(uploads + file);
 
         Resource resource = new UrlResource(path.toUri());
-        File targetFile = new File(uploads+file);
+        File targetFile = new File(uploads + file);
         String contentType = Files.probeContentType(path);
 
         return ResponseEntity.ok()
                 .contentType(MediaType.parseMediaType(contentType))
-              /*  .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + targetFile.getName()
-                +"\"")*/
+                /*  .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + targetFile.getName()
+                  +"\"")*/
                 .contentLength(targetFile.length())
                 .body(resource);
     }

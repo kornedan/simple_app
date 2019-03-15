@@ -2,10 +2,10 @@
 </head>
 <div class="elementProduct" xmlns:th="http://www.w3.org/1999/xhtml" th:fragment="table">
     <table>
-        <tr  class="border border-dark" th:each="product: ${product}">
+        <tr class="border border-dark" th:each="product: ${product}">
             <td id="name" th:text="${product.getName()}"></td>
             <td id="price" th:text="${product.getPrice()}"></td>
-            <td id="zl" >  zl</td>
+            <td id="zl"> zl</td>
             <td><img th:src="${product.getHrefNameFile()}" width="200" height="200"></td>
             <td>
                 <form method="post" th:object="${product}" action="/detailProduct">

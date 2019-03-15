@@ -24,13 +24,13 @@ public class IndexController {
     }
 
     @PostMapping("/detailProduct")
-    public String deatailBookController (@ModelAttribute ProductDTO productDTO, Model model){
+    public String deatailBookController(@ModelAttribute ProductDTO productDTO, Model model) {
         model.addAttribute("product", productDTO);
         return "detailProduct";
     }
 
     @RequestMapping("/buyProduct")
-    public String buyProductController(){
+    public String buyProductController() {
         return "buyProduct";
     }
 

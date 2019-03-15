@@ -8,9 +8,8 @@ import simple.app.simple_app.models.Users;
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<Users,Integer> {
+public interface UserRepository extends JpaRepository<Users, Integer> {
 
-    //@Query(value = "select * from user where name = ?1", nativeQuery = true)//SQL
-    @Query(value = "select u from Users u where u.name = ?1")//JPQL
+    @Query(value = "select u from Users u where u.name = ?1")
     Optional<Users> findUserByName(String username);
 }

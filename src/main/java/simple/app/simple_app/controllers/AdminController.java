@@ -16,7 +16,7 @@ import java.io.IOException;
 public class AdminController {
 
     @RequestMapping
-    public String adminController(){
+    public String adminController() {
         return "admin";
     }
 
